@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shekar Veg Mart - Fresh Vegetables & Fruits in Yerraguntla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #FF5252;
+            --secondary: #00E5FF;
+            --accent: #FFD740;
+            --success: #00E676;
+            --dark: #1A237E;
+            --light: #F5F7FF;
+            --text: #2C3E50;
+            --gradient: linear-gradient(135deg, #FF5252, #FF4081);
+            --gradient2: linear-gradient(135deg, #00E5FF, #00B0FF);
+            --gradient3: linear-gradient(135deg, #FFD740, #FFAB00);
+            --gradient4: linear-gradient(135deg, #00E676, #00C853);
+            --gradient-dark: linear-gradient(135deg, #1A237E, #283593);
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --radius: 25px;
+            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 82, 82, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 229, 255, 0.05) 0%, transparent 20%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header Styles - Enhanced */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--primary);
+            transition: var(--transition);
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 10px 25px rgba(255, 82, 82, 0.3);
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 25px rgba(255, 82, 82, 0.3); }
+            100% { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255, 82, 82, 0.4); }
+        }
+        
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text p {
+            font-size: 15px;
+            color: var(--dark);
+            font-weight: 600;
+            background: var(--gradient2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-header {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 22px;
+            border-radius: 60px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 22px;
+        }
+        
+        .contact-item p {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 16px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 17px;
+            padding: 10px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: var(--gradient);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 82, 82, 0.3);
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Hero Section - Enhanced */
+        .hero {
+            padding: 200px 0 120px;
+            background: linear-gradient(135deg, rgba(255, 82, 82, 0.08), rgba(0, 229, 255, 0.08));
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.2s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+        
+        .hero::before {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 82, 82, 0.15), transparent 70%);
+            top: -300px;
+            right: -200px;
+        }
+        
+        .hero::after {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.15), transparent 70%);
+            bottom: -250px;
+            left: -200px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-text h2 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, var(--primary), var(--dark), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes textShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+            color: var(--text);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(255, 82, 82, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 3px solid var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gradient2);
+            color: white;
+            transform: translateY(-8px);
+            border-color: transparent;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(1deg); }
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 100px 0 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 56px;
+            font-weight: 900;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 6px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            font-size: 20px;
+            color: var(--text);
+            margin-top: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .product-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient4);
+            color: white;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 800;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(0, 230, 118, 0.3);
+        }
+        
+        .product-img-container {
+            height: 280px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.15);
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-info h3 {
+            font-size: 26px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .product-info p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+        
+        .price {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary);
+            text-shadow: 0 2px 10px rgba(255, 82, 82, 0.2);
+        }
+        
+        .add-to-cart {
+            background: var(--gradient3);
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            font-size: 22px;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(255, 215, 64, 0.3);
+        }
+        
+        .add-to-cart:hover {
+            transform: rotate(180deg) scale(1.1);
+        }
+        
+        /* Ad Sections */
+        .ad-container {
+            margin: 80px 0;
+            position: relative;
+        }
+        
+        .ad-label {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .ad-unit {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 4px dashed var(--secondary);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-unit::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+            top: 0;
+            left: -100%;
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .ad-unit:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+        
+        .ad-unit p {
+            color: #777;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        /* Store Features */
+        .features {
+            background: linear-gradient(135deg, rgba(255, 82, 82, 0.08), rgba(0, 229, 255, 0.08));
+            padding: 120px 0;
+            margin: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border-top: 8px solid transparent;
+            border-image: var(--gradient);
+            border-image-slice: 1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 35px;
+            background: var(--gradient);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 42px;
+            box-shadow: 0 15px 35px rgba(255, 82, 82, 0.25);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotateY(180deg);
+        }
+        
+        .feature-card h3 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .feature-card p {
+            font-size: 17px;
+            color: var(--text);
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 50px 35px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--gradient4);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--success);
+        }
+        
+        .benefit-card i {
+            font-size: 60px;
+            margin-bottom: 30px;
+            background: var(--gradient4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover i {
+            transform: scale(1.2);
+        }
+        
+        .benefit-card h3 {
+            font-size: 26px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .benefit-card p {
+            font-size: 17px;
+            color: var(--text);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 120px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            font-size: 28px;
+            margin-bottom: 35px;
+            color: var(--accent);
+            font-weight: 900;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 5px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 0;
+            border-radius: 3px;
+        }
+        
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 17px;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            transform: translateX(10px);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 35px;
+        }
+        
+        .social-icons a {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background: var(--gradient);
+            transform: translateY(-10px) rotate(10deg);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: pulseWhatsapp 2s infinite;
+        }
+        
+        @keyframes pulseWhatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(15deg);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 3000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+        }
+        
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-nav ul li {
+            margin: 30px 0;
+        }
+        
+        .mobile-nav ul li a {
+            text-decoration: none;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .mobile-nav ul li a:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: var(--gradient);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-menu:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 60px;
+            }
+            
+            .hero-text h2 {
+                font-size: 54px;
+            }
+            
+            .contact-header {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-text h2 {
+                font-size: 48px;
+            }
+            
+            .section-title h2 {
+                font-size: 48px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 180px 0 100px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text h2 {
+                font-size: 40px;
+            }
+            
+            .btn {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 40px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 34px;
+                bottom: 30px;
+                right: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-text h2 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #FF4081, #FF5252);
+        }
+        
+        /* Loading Animation for Images */
+        .product-img-container, .hero-image img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img-container::before, .hero-image img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            z-index: 1;
+        }
+        
+        @keyframes loading {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .product-img, .hero-image img {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/916281106616" class="whatsapp-float" target="_blank" title="Order on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-carrot"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Shekar Veg Mart</h1>
+                    <p>Fresh Vegetables & Fruits in Yerraguntla</p>
+                </div>
+            </div>
+            
+            <div class="contact-header">
+                <div class="contact-item">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Shekar</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>6281106616</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Yerraguntla</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#vegetables">Vegetables</a></li>
+                    <li><a href="#fruits">Fruits</a></li>
+                    <li><a href="#features">Why Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-menu" id="closeMenuBtn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#vegetables">Vegetables</a></li>
+            <li><a href="#fruits">Fruits</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:6281106616" style="color: var(--primary); font-size: 28px;">Call: 6281106616</a></li>
+        </ul>
+        <div class="contact-item" style="margin-top: 40px; background: var(--gradient); color: white;">
+            <i class="fas fa-user-tie" style="color: white;"></i>
+            <p style="color: white;">Owner: Shekar</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Fresh Vegetables & Fruits in Yerraguntla</h2>
+                    <p>Experience the freshness of farm-to-table vegetables and fruits at Shekar Veg Mart. We bring you the highest quality produce at the best prices, delivered right to your doorstep in Yerraguntla.</p>
+                    <div class="hero-buttons">
+                        <a href="#vegetables" class="btn btn-primary">
+                            <i class="fas fa-shopping-basket"></i> Shop Fresh Produce
+                        </a>
+                        <a href="tel:6281106616" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i> Call: 6281106616
+                        </a>
+                    </div>
+                    <div style="margin-top: 40px; display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.8); padding: 12px 25px; border-radius: 60px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);">
+                            <i class="fas fa-check-circle" style="color: var(--success); font-size: 22px;"></i>
+                            <span style="font-weight: 600;">100% Fresh Produce</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.8); padding: 12px 25px; border-radius: 60px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);">
+                            <i class="fas fa-truck" style="color: var(--primary); font-size: 22px;"></i>
+                            <span style="font-weight: 600;">Free Home Delivery</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.8); padding: 12px 25px; border-radius: 60px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);">
+                            <i class="fas fa-rupee-sign" style="color: var(--accent); font-size: 22px;"></i>
+                            <span style="font-weight: 600;">Best Prices in Town</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1540420828642-fca2c5c18abb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Vegetables & Fruits at Shekar Veg Mart" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Section 1 -->
+    <section class="container ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-unit">
+            <div style="font-size: 48px; color: var(--primary);">
+                <i class="fas fa-ad"></i>
+            </div>
+            <p>Ad Space Available - Contact for Advertising</p>
+            <p style="font-size: 16px;">Replace with your AdSense code - 728x250</p>
+        </div>
+    </section>
+
+    <!-- Vegetables Section -->
+    <section class="container" id="vegetables">
+        <div class="section-title">
+            <h2>Fresh Vegetables</h2>
+            <p>Handpicked fresh vegetables delivered daily from local farms in Yerraguntla</p>
+        </div>
+        <div class="products-grid">
+            <!-- Vegetable 1 - Tomato -->
+            <div class="product-card">
+                <div class="product-badge">Fresh</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Red Tomatoes" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Tomato</h3>
+                    <p>Fresh, juicy red tomatoes rich in vitamins A, C, and antioxidants. Perfect for salads, curries, and sauces.</p>
+                    <div class="product-price">
+                        <div class="price">₹40/kg</div>
+                        <button class="add-to-cart" aria-label="Add Tomato to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 2 - Potato -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--primary);">Popular</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Potatoes" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Potato</h3>
+                    <p>Nutrient-rich potatoes, excellent source of carbohydrates and potassium. Great for fries, curries, and mashed potatoes.</p>
+                    <div class="product-price">
+                        <div class="price">₹30/kg</div>
+                        <button class="add-to-cart" aria-label="Add Potato to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 3 - Onion -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--secondary);">New</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1508015926936-4c4c6f0e6e23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Onions" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Onion</h3>
+                    <p>Fresh onions with antioxidants and compounds that fight inflammation. Essential for Indian cooking.</p>
+                    <div class="product-price">
+                        <div class="price">₹35/kg</div>
+                        <button class="add-to-cart" aria-label="Add Onion to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 4 - Brinjal -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--gradient4);">Organic</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1594282482151-58ad4eb8085b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Brinjal (Eggplant)" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Brinjal</h3>
+                    <p>Rich in fiber and antioxidants, low in calories. Perfect for baingan bharta and other Indian dishes.</p>
+                    <div class="product-price">
+                        <div class="price">₹50/kg</div>
+                        <button class="add-to-cart" aria-label="Add Brinjal to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 5 - Carrot -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--gradient3);">Sale</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1598170845058-78132e1b46d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Carrots" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Carrot</h3>
+                    <p>Crunchy carrots packed with beta-carotene, fiber, vitamin K1, and potassium. Great for salads and juices.</p>
+                    <div class="product-price">
+                        <div class="price">₹60/kg</div>
+                        <button class="add-to-cart" aria-label="Add Carrot to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 6 - Cauliflower -->
+            <div class="product-card">
+                <div class="product-badge">Fresh</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1613743983303-b3e89f8a2b80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Cauliflower" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Cauliflower</h3>
+                    <p>Low-calorie vegetable rich in vitamins C, K, and B-complex vitamins. Perfect for curries and snacks.</p>
+                    <div class="product-price">
+                        <div class="price">₹45/kg</div>
+                        <button class="add-to-cart" aria-label="Add Cauliflower to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 7 - Spinach -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--gradient4);">Organic</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Spinach (Palak)" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Spinach</h3>
+                    <p>Iron-rich leafy green, excellent source of vitamins A, C, K, and magnesium. Great for palak paneer and salads.</p>
+                    <div class="product-price">
+                        <div class="price">₹30/kg</div>
+                        <button class="add-to-cart" aria-label="Add Spinach to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vegetable 8 - Bell Pepper -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--primary);">Popular</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Bell Peppers" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Bell Pepper</h3>
+                    <p>Colorful peppers rich in vitamins A, C, and antioxidants. Available in green, red, and yellow varieties.</p>
+                    <div class="product-price">
+                        <div class="price">₹80/kg</div>
+                        <button class="add-to-cart" aria-label="Add Bell Pepper to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--dark);">Why Choose Shekar Veg Mart</h2>
+                <p style="color: var(--text);">We provide the best quality vegetables and fruits in Yerraguntla</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Delivery</h3>
+                    <p>Free home delivery for orders above ₹300 in Yerraguntla area. Fast and reliable delivery service.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gradient2);">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Farm Fresh</h3>
+                    <p>Directly sourced from local farms in and around Yerraguntla, ensuring maximum freshness and quality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gradient3);">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive prices with daily discounts on seasonal produce. We beat any price in Yerraguntla.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fruits Section -->
+    <section class="container" id="fruits">
+        <div class="section-title">
+            <h2>Fresh Fruits</h2>
+            <p>Sweet and juicy fruits delivered fresh daily to your doorstep in Yerraguntla</p>
+        </div>
+        <div class="products-grid">
+            <!-- Fruit 1 - Mango -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--gradient3);">Seasonal</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Mangoes" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Mango</h3>
+                    <p>King of fruits, rich in vitamins A, C, and antioxidants. Sweet and juicy Alphonso mangoes available seasonally.</p>
+                    <div class="product-price">
+                        <div class="price">₹120/kg</div>
+                        <button class="add-to-cart" aria-label="Add Mango to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 2 - Banana -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--primary);">Best Seller</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Bananas" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Banana</h3>
+                    <p>Energy-rich fruit packed with potassium and vitamin B6. Perfect for breakfast and healthy snacks.</p>
+                    <div class="product-price">
+                        <div class="price">₹50/dozen</div>
+                        <button class="add-to-cart" aria-label="Add Banana to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 3 - Apple -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--secondary);">Imported</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Apples" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Apple</h3>
+                    <p>Crunchy apples rich in fiber and antioxidants. Available in Kashmiri and Washington varieties.</p>
+                    <div class="product-price">
+                        <div class="price">₹150/kg</div>
+                        <button class="add-to-cart" aria-label="Add Apple to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 4 - Pomegranate -->
+            <div class="product-card">
+                <div class="product-badge">Fresh</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1541344999736-83eca272f4f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Pomegranates" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Pomegranate</h3>
+                    <p>Antioxidant-rich fruit with vitamins C, K, and folate. Sweet and juicy seeds perfect for salads and juices.</p>
+                    <div class="product-price">
+                        <div class="price">₹180/kg</div>
+                        <button class="add-to-cart" aria-label="Add Pomegranate to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 5 - Guava -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--gradient4);">Organic</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Guavas" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Guava</h3>
+                    <p>Tropical fruit loaded with vitamin C and fiber. Sweet and aromatic guavas perfect for eating raw or in juices.</p>
+                    <div class="product-price">
+                        <div class="price">₹80/kg</div>
+                        <button class="add-to-cart" aria-label="Add Guava to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 6 - Watermelon -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--primary);">Popular</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Watermelon" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Watermelon</h3>
+                    <p>Hydrating fruit with 92% water content, rich in vitamins A and C. Perfect refreshment for hot days.</p>
+                    <div class="product-price">
+                        <div class="price">₹30/kg</div>
+                        <button class="add-to-cart" aria-label="Add Watermelon to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 7 - Orange -->
+            <div class="product-card">
+                <div class="product-badge" style="background: var(--gradient3);">Sale</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1547514701-42782101795e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Oranges" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Orange</h3>
+                    <p>Citrus fruit packed with vitamin C and antioxidants. Juicy and sweet oranges perfect for juices.</p>
+                    <div class="product-price">
+                        <div class="price">₹90/kg</div>
+                        <button class="add-to-cart" aria-label="Add Orange to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fruit 8 - Grapes -->
+            <div class="product-card">
+                <div class="product-badge">Fresh</div>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1515777315835-281b94c9589f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=100" 
+                         alt="Fresh Grapes" 
+                         class="product-img" 
+                         loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Grapes</h3>
+                    <p>Sweet grapes rich in antioxidants like resveratrol. Available in green and black varieties.</p>
+                    <div class="product-price">
+                        <div class="price">₹120/kg</div>
+                        <button class="add-to-cart" aria-label="Add Grapes to Cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Section 2 -->
+    <section class="container ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-unit" style="height: 150px;">
+            <div style="font-size: 36px; color: var(--secondary);">
+                <i class="fas fa-ad"></i>
+            </div>
+            <p>Ad Space - 728x90 Banner</p>
+            <p style="font-size: 16px;">Replace with your AdSense code</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Health Benefits</h2>
+                <p>Eating fresh vegetables and fruits provides numerous health benefits</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Heart Health</h3>
+                    <p>Fresh vegetables and fruits help reduce cholesterol and maintain healthy blood pressure levels.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-weight"></i>
+                    <h3>Weight Management</h3>
+                    <p>Low in calories and high in fiber, helping in healthy weight management and digestion.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Immunity Boost</h3>
+                    <p>Rich in vitamins and antioxidants that strengthen your immune system against diseases.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Brain Health</h3>
+                    <p>Essential nutrients support cognitive function, memory, and overall brain health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Shekar Veg Mart</h3>
+                    <p>Providing fresh, organic Indian vegetables and fruits directly from local farms to your home in Yerraguntla. Quality you can trust since 2010.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/916281106616" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="tel:6281106616" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#vegetables"><i class="fas fa-chevron-right"></i> Vegetables</a></li>
+                        <li><a href="#fruits"><i class="fas fa-chevron-right"></i> Fruits</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Why Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Yerraguntla, Andhra Pradesh</a></li>
+                        <li><a href="tel:6281106616"><i class="fas fa-phone"></i> 6281106616</a></li>
+                        <li><a href="#"><i class="fas fa-user-tie"></i> Proprietor: Shekar</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Open: 7AM-9PM, All Days</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Shekar Veg Mart. All rights reserved. | Yerraguntla | Contact: 6281106616</p>
+                <p style="margin-top: 15px;">Fresh Vegetables & Fruits Store | Proudly serving Yerraguntla community since 2010</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Add to Cart Animation with Improved Effects
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Animation effect
+                this.innerHTML = '<i class="fas fa-check"></i>';
+                this.style.background = 'var(--gradient4)';
+                this.style.transform = 'scale(1.3)';
+                
+                // Create flying cart animation
+                const productCard = this.closest('.product-card');
+                const productImg = productCard.querySelector('.product-img');
+                const clone = productImg.cloneNode(true);
+                clone.style.position = 'fixed';
+                clone.style.width = '100px';
+                clone.style.height = '100px';
+                clone.style.objectFit = 'cover';
+                clone.style.borderRadius = '15px';
+                clone.style.zIndex = '10000';
+                clone.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+                clone.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                
+                const rect = productImg.getBoundingClientRect();
+                clone.style.top = rect.top + 'px';
+                clone.style.left = rect.left + 'px';
+                document.body.appendChild(clone);
+                
+                // Animate to cart position
+                setTimeout(() => {
+                    clone.style.top = '30px';
+                    clone.style.left = 'calc(100% - 150px)';
+                    clone.style.width = '50px';
+                    clone.style.height = '50px';
+                    clone.style.opacity = '0.5';
+                }, 10);
+                
+                // Remove clone and show notification
+                setTimeout(() => {
+                    document.body.removeChild(clone);
+                    
+                    // Create notification
+                    const notification = document.createElement('div');
+                    notification.innerHTML = '<i class="fas fa-check-circle"></i> Added to cart!';
+                    notification.style.position = 'fixed';
+                    notification.style.top = '120px';
+                    notification.style.right = '30px';
+                    notification.style.background = 'var(--gradient4)';
+                    notification.style.color = 'white';
+                    notification.style.padding = '20px 30px';
+                    notification.style.borderRadius = '15px';
+                    notification.style.boxShadow = 'var(--shadow-hover)';
+                    notification.style.zIndex = '10000';
+                    notification.style.fontWeight = '800';
+                    notification.style.fontSize = '18px';
+                    notification.style.display = 'flex';
+                    notification.style.alignItems = 'center';
+                    notification.style.gap = '15px';
+                    notification.style.transition = 'all 0.5s ease';
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateX(100px)';
+                    document.body.appendChild(notification);
+                    
+                    // Animate notification in
+                    setTimeout(() => {
+                        notification.style.opacity = '1';
+                        notification.style.transform = 'translateX(0)';
+                    }, 10);
+                    
+                    // Animate notification out
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(100px)';
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                document.body.removeChild(notification);
+                            }
+                        }, 500);
+                    }, 3000);
+                }, 800);
+                
+                // Reset button
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-cart-plus"></i>';
+                    this.style.background = '';
+                    this.style.transform = '';
+                }, 1500);
+            });
+        });
+        
+        // Header scroll effect with parallax
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.15)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'var(--shadow)';
+                header.style.backdropFilter = 'blur(15px)';
+            }
+            
+            // Parallax effect for hero
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrollY * 0.5 + 'px';
+            }
+        });
+        
+        // Smooth scroll for anchor links with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Lazy loading images with intersection observer
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '0px 0px 100px 0px'
+        });
+        
+        // Observe all product images
+        document.querySelectorAll('.product-img').forEach(img => {
+            imageObserver.observe(img);
+        });
+        
+        // Initialize animations on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Add loaded class to hero image
+            const heroImg = document.querySelector('.hero-image img');
+            if (heroImg.complete) {
+                heroImg.classList.add('loaded');
+            } else {
+                heroImg.addEventListener('load', () => {
+                    heroImg.classList.add('loaded');
+                });
+            }
+            
+            // Console welcome message
+            console.log('%c🍅 Shekar Veg Mart 🍌', 'color: #FF5252; font-size: 28px; font-weight: 900;');
+            console.log('%cFresh Vegetables & Fruits in Yerraguntla', 'color: #00E5FF; font-size: 18px;');
+            console.log('%cOwner: Shekar | Contact: 6281106616', 'color: #FFD740; font-size: 16px;');
+            console.log('%cReplace ad units with your AdSense code for monetization', 'color: #00E676; font-size: 14px;');
+        });
+        
+        // Add ripple effect to buttons
+        const buttons = document.querySelectorAll('.btn, .add-to-cart');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.7)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            .product-img.loaded, .hero-image img.loaded {
+                animation: fadeInUp 0.8s ease-out;
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
